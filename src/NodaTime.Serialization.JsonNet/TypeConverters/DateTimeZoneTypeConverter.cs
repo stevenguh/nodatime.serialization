@@ -22,7 +22,7 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
         {
             if (value is string)
             {
-                IDateTimeZoneProvider provider = GetZoneProvider(context);
+                IDateTimeZoneProvider provider = GetZoneProvider<DateTimeZone>();
                 return provider[(string)value];
             }
 

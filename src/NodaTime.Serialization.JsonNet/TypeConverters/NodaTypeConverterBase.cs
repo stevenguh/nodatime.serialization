@@ -48,22 +48,15 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
         /// Gets an <see cref="IDateTimeZoneProvider"/> from <see cref="DateTimeZoneProviderAttribute"/>
         /// that's annotated on the type.
         /// </summary>
-        /// <param name="context">An <see cref="ITypeDescriptorContext"/> to get the <see cref="DateTimeZoneProviderAttribute"/>.</param>
+        /// <typeparam name="T">The type that has <see cref="DateTimeZoneProviderAttribute"/> annotated.</typeparam>
         /// <returns>
         /// An <see cref="IDateTimeZoneProvider"/> from <see cref="DateTimeZoneProviderAttribute"/> that annotated on the same type.
         /// If the attribute is not found, then <see cref="DateTimeZoneProviders.Tzdb"/> will return.
         /// </returns>
-        protected IDateTimeZoneProvider GetZoneProvider(ITypeDescriptorContext context)
+        protected IDateTimeZoneProvider GetZoneProvider<T>()
         {
-            DateTimeZoneProviderAttribute attr = null;
-            if (context != null)
-            {
-                PropertyDescriptor descriptor = context.PropertyDescriptor;
-
-                AttributeCollection collection = context.PropertyDescriptor.Attributes;
-                attr = (DateTimeZoneProviderAttribute)collection[typeof(DateTimeZoneProviderAttribute)];
-            }
-
+            DateTimeZoneProviderAttribute attr = (DateTimeZoneProviderAttribute)
+                TypeDescriptor.GetAttributes(typeof(T))[typeof(DateTimeZoneProviderAttribute)];
             return attr?.ZoneProvider ?? DateTimeZoneProviders.Tzdb;
         }
     }

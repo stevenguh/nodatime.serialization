@@ -20,7 +20,7 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
         /// <returns>A <see cref="IPattern{T}"/>.</returns>
         protected override IPattern<ZonedDateTime> GetPattern(ITypeDescriptorContext context, CultureInfo culture)
         {
-            IDateTimeZoneProvider provider = GetZoneProvider(context);
+            IDateTimeZoneProvider provider = GetZoneProvider<ZonedDateTime>();
             if (pattern == null || !this.pattern.ZoneProvider.Equals(provider))
             {
                 this.pattern = ZonedDateTimePattern.CreateWithInvariantCulture("uuuu'-'MM'-'dd'T'HH':'mm':'ss;FFFFFFFFFo<G> z", provider);
