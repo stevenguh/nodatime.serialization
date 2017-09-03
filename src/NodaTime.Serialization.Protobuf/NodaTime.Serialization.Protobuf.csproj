@@ -5,7 +5,7 @@
     <AssemblyTitle>Noda Time</AssemblyTitle>
     <VersionPrefix>1.0.0-alpha01</VersionPrefix>
     <Authors>Jon Skeet</Authors>
-    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyOriginatorKeyFile>../../NodaTime Release.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
