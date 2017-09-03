@@ -8,7 +8,7 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
     /// A type converter for time zones, using the zone provider
     /// in <see cref="DateTimeZoneProviderAttribute"/>.
     /// </summary>
-    public class DateTimeZoneTypeConverter : NodaTypeConveterBase
+    public class DateTimeZoneTypeConverter : NodaTypeConverterBase
     {
         /// <summary>
         /// Converts the given object to the type of this converter, using the specified

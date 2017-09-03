@@ -8,7 +8,7 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
     /// <summary>
     /// A base class for creating the type converter for NodaTime types.
     /// </summary>
-    public abstract class NodaTypeConveterBase : TypeConverter
+    public abstract class NodaTypeConverterBase : TypeConverter
     {
         /// <summary>
         /// Returns whether this converter can convert an object of the given type to the
@@ -73,7 +73,7 @@ namespace NodaTime.Serialization.JsonNet.TypeConverters
     /// with <see cref="IPattern{T}"/>.
     /// </summary>
     /// <typeparam name="T">The NodaTime type.</typeparam>
-    public abstract class NodaPatternTypeConverterBase<T> : NodaTypeConveterBase
+    public abstract class NodaPatternTypeConverterBase<T> : NodaTypeConverterBase
     {
         /// <summary>
         /// Converts the given object to the type of this converter, using the specified
